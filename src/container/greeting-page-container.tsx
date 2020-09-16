@@ -1,9 +1,10 @@
-import React, {useState} from "react"
+import React from "react"
+import GreetingPage from "../components/pages/greeting-page/greeting-page";
 
 const GreetingPageContainer = () => {
-    const [isActive,setIsActive] = useState(false)
-    return <>
 
+    return <>
+            <GreetingPage />
         </>
 }
 

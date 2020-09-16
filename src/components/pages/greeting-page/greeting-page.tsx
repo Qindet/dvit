@@ -2,7 +2,8 @@ import React from "react"
 import { makeStyles } from '@material-ui/core/styles'
 import SearchIcon from '@material-ui/icons/Search'
 import ChatIcon from '@material-ui/icons/Chat'
-import { Typography, Button } from "@material-ui/core"
+import {Typography, Button, Modal} from "@material-ui/core"
+import ModalSignInContainer from "../../../container/modal-sign-in-container";
 
 const useStyles = makeStyles({
     pageWrapper: {
@@ -52,10 +53,11 @@ const useStyles = makeStyles({
 
 });
 
-const GreetingPage = () => {
+const GreetingPage = ({}) => {
     const classes = useStyles()
 
     return <div className={classes.pageWrapper}>
+
             <div className={classes.infoSide}>
                 <ul className={classes.infoSideList}>
                     <li className={classes.infoSideListItem}>
@@ -76,7 +78,7 @@ const GreetingPage = () => {
                         Text
                     </Typography>
                     <Button className={classes.infoSideButton} style={{backgroundColor: 'orange',color:'white'}}>Sign Up</Button>
-                    <Button color="secondary" className={classes.infoSideButton}>Sign In</Button>
+                    <ModalSignInContainer/>
                 </div>
             </div>
         </div>
