@@ -4,8 +4,9 @@ import SearchIcon from '@material-ui/icons/Search'
 import ChatIcon from '@material-ui/icons/Chat'
 import LanguageIcon from '@material-ui/icons/Language'
 import {Typography, Button} from "@material-ui/core"
-import ModalSignInContainer from "../../container/modal-sign-in-container"
+import ModalSignInContainer from "../../containers/modal-sign-in-container"
 import { NavLink } from "react-router-dom"
+import SpaIcon from "@material-ui/icons/Spa";
 
 
 const useStyles = makeStyles({
@@ -67,9 +68,15 @@ const useStyles = makeStyles({
     },
     authSideContent: {
         width: '50%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
         '& h6': {
             marginBottom: '10px'
         }
+    },
+    mainLogo: {
+        fontSize: '15em'
     }
 });
 
@@ -97,6 +104,7 @@ const GreetingPage: React.FC = () => {
             </div>
             <div className={classes.authSide}>
                 <div className={classes.authSideContent}>
+                    <SpaIcon className={classes.mainLogo} color="primary"/>
                     <Typography variant="h6">
                         Присоединяйтесь к Dvitter!
                     </Typography>
