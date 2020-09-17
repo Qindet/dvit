@@ -1,5 +1,5 @@
 import React from "react";
-import {Button} from "@material-ui/core";
+import {Button,  TextField, FormControl} from "@material-ui/core";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
@@ -14,20 +14,41 @@ const useStyles = makeStyles((theme) => ({
     },
     paper: {
         backgroundColor: theme.palette.background.paper,
-        border: '2px solid #000',
-        boxShadow: theme.shadows[5],
+        minWidth: '400px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        padding: '25px',
+        '& h2': {
+            marginBottom: '10px'
+        }
     },
     infoSideButton: {
         width: '100%',
+        color: 'orange',
+        padding: '10px',
+        marginTop: '5px'
+    },
+    textField: {
+        width: '100%',
+        marginBottom: '10px'
+    },
+    inputLabel: {
         color: 'orange'
     }
 }));
-//@ts-ignore
-const ModalSingIn = ({open,handleOpen,handleClose}) => {
+
+interface ModalSignInProps {
+    open: boolean
+    handleOpen: () => void
+    handleClose: () => void
+}
+
+const ModalSingIn: React.FC<ModalSignInProps> = ({open,handleOpen,handleClose}) => {
     const classes = useStyles();
 
     return <>
-        <Button color="secondary" className={classes.infoSideButton} onClick={handleOpen}>Sign In</Button>
+        <Button color="secondary" className={classes.infoSideButton} onClick={handleOpen}>Войти</Button>
 
         <Modal
             aria-labelledby="transition-modal-title"
@@ -42,10 +63,16 @@ const ModalSingIn = ({open,handleOpen,handleClose}) => {
             }}
         >
             <Fade in={open}>
-                <div className={classes.paper}>
-                    <h2 id="transition-modal-title">Transition modal</h2>
-                    <p id="transition-modal-description">react-transition-group animates me.</p>
-                </div>
+                <FormControl className={classes.paper}>
+                    <h2 id="transition-modal-title">Войдите в учетную запись</h2>
+                    <div>
+                        <TextField className={classes.textField}  id="email-field" label="Email" variant="filled" />
+                    </div>
+                    <div>
+                        <TextField className={classes.textField}  id="pass-field" label="Пароль" variant="filled" />
+                    </div>
+                    <Button color="secondary" className={classes.infoSideButton} onClick={handleOpen}>Войти</Button>
+                </FormControl>
             </Fade>
         </Modal>
         </>

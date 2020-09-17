@@ -1,5 +1,5 @@
 import React from "react"
-import GreetingPage from "../components/pages/greeting-page/greeting-page";
+import GreetingPage from "../components/pages/greeting-page";
 
 const GreetingPageContainer = () => {
 

@@ -1,12 +1,14 @@
 import React from "react";
 import {Route} from 'react-router-dom'
-import GreetingPage from "../pages/greeting-page/greeting-page";
 import './app.css'
+import SignUpPage from "../pages/sign-up-page";
+import GreetingPageContainer from "../../container/greeting-page-container";
 
-const App = () => {
+const App:React.FC = () => {
     return (
         <div>
-            <Route path="/" component={GreetingPage}/>
+            <Route path="/" component={GreetingPageContainer} exact/>
+            <Route path="/signup" component={SignUpPage}/>
         </div>
     )
 }
