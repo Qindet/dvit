@@ -121,10 +121,12 @@ const NavigationPanel = () => {
                         <ModalSignInContainer>Двитнуть</ModalSignInContainer>
                     </Hidden>
                     <Hidden lgUp>
+                        <div style={{marginLeft:-15}}>
+                            <ModalSignInContainer>
+                                <CreateIcon className={classes.iconItem} fontSize="large" color="primary"/>
+                            </ModalSignInContainer>
+                        </div>
 
-                        <ModalSignInContainer>
-                            <CreateIcon className={classes.iconItem} fontSize="large" color="primary"/>
-                        </ModalSignInContainer>
 
                     </Hidden>
                     {/*<Typography className={classes.textItem}>Двитнуть</Typography>*/}

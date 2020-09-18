@@ -24,10 +24,10 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     infoSideButton: {
-        width: '100%',
-        color: 'orange',
+        backgroundColor: 'orange',
+        color: '#FFF',
         padding: '10px',
-        marginTop: '5px'
+        marginTop: '5px',
     },
     textField: {
         width: '100%',
@@ -49,7 +49,7 @@ const ModalSingIn: React.FC<ModalSignInProps> = ({open,handleOpen,handleClose,ch
     const classes = useStyles();
 
     return <>
-        <Button fullWidth color="secondary" className={classes.infoSideButton} onClick={handleOpen}>{children}</Button>
+        <Button fullWidth className={classes.infoSideButton} onClick={handleOpen}>{children}</Button>
 
         <Modal
             aria-labelledby="transition-modal-title"
