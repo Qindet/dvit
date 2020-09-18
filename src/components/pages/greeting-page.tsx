@@ -111,7 +111,7 @@ const GreetingPage: React.FC = () => {
                     <Button className={classes.infoSideButton} style={{backgroundColor: 'orange',color:'white'}}>
                         <NavLink to="/signup" style={{textDecoration: 'none',color:'#fff'}}>Зарегистрироваться</NavLink>
                     </Button>
-                    <ModalSignInContainer/>
+                    <ModalSignInContainer>Войти</ModalSignInContainer>
                 </div>
             </div>
         </div>

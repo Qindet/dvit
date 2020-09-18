@@ -2,7 +2,7 @@ import React from 'react'
 import ModalSingIn from "../components/modal-sign-in";
 
 
-const ModalSignInContainer: React.FC = () => {
+const ModalSignInContainer: React.FC = ({children}) => {
     const [open, setOpen] = React.useState(false);
 
     const handleOpen = () => {
@@ -15,7 +15,7 @@ const ModalSignInContainer: React.FC = () => {
 
     return (
         <div>
-            <ModalSingIn open={open} handleOpen={handleOpen} handleClose={handleClose}/>
+            <ModalSingIn children={children} open={open} handleOpen={handleOpen} handleClose={handleClose}/>
         </div>
     );
 }

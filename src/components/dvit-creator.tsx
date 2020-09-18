@@ -36,7 +36,7 @@ const DvitCreator = () => {
                     <Avatar className={classes.avatarItem} alt="Travis Howard" src="/static/images/avatar/2.jpg"/>
                     <div className={classes.mainPanelCreateWrap}>
                         <TextField id="standard-basic"  placeholder="Что происходит" variant={"standard"}/>
-                        <Button variant="contained"  color="primary">Отправить</Button>
+                        <Button variant="contained"  color="primary">Двитнуть</Button>
                     </div>
                 </Paper>
         </>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {ReactElement, ReactNode} from "react";
 import {Button,  TextField, FormControl} from "@material-ui/core";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
@@ -42,13 +42,14 @@ interface ModalSignInProps {
     open: boolean
     handleOpen: () => void
     handleClose: () => void
+    children: string | ReactNode
 }
 
-const ModalSingIn: React.FC<ModalSignInProps> = ({open,handleOpen,handleClose}) => {
+const ModalSingIn: React.FC<ModalSignInProps> = ({open,handleOpen,handleClose,children}) => {
     const classes = useStyles();
 
     return <>
-        <Button color="secondary" className={classes.infoSideButton} onClick={handleOpen}>Войти</Button>
+        <Button fullWidth color="secondary" className={classes.infoSideButton} onClick={handleOpen}>{children}</Button>
 
         <Modal
             aria-labelledby="transition-modal-title"

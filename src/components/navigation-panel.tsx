@@ -2,14 +2,16 @@ import React from "react"
 import SpaIcon from "@material-ui/icons/Spa";
 import {NavLink} from "react-router-dom";
 import HomeIcon from "@material-ui/icons/Home";
-import {Typography} from "@material-ui/core";
+import {Button, Typography} from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import NotificationsNoneIcon from "@material-ui/icons/NotificationsNone";
 import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
 import SubjectIcon from "@material-ui/icons/Subject";
 import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 import {makeStyles} from "@material-ui/core/styles";
-
+import CreateIcon from '@material-ui/icons/Create';
+import Hidden from "@material-ui/core/Hidden";
+import ModalSignInContainer from "../containers/modal-sign-in-container";
 const useStyles = makeStyles((theme) => ({
 
     gridWrapper: {
@@ -112,6 +114,20 @@ const NavigationPanel = () => {
                     <PersonOutlineIcon className={classes.iconItem} fontSize="large" color="primary"/>
                     <Typography className={classes.textItem}>Профиль</Typography>
                 </NavLink>
+            </li>
+            <li className={classes.leftSideListItem}>
+                    {/*<CreateIcon className={classes.iconItem} fontSize="large" color="primary"/>*/}
+                    <Hidden mdDown>
+                        <ModalSignInContainer>Двитнуть</ModalSignInContainer>
+                    </Hidden>
+                    <Hidden lgUp>
+
+                        <ModalSignInContainer>
+                            <CreateIcon className={classes.iconItem} fontSize="large" color="primary"/>
+                        </ModalSignInContainer>
+
+                    </Hidden>
+                    {/*<Typography className={classes.textItem}>Двитнуть</Typography>*/}
             </li>
         </ul>
         </>
