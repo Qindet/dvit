@@ -4,7 +4,7 @@ export const theme = createMuiTheme({
     palette: {
         primary: {
             // Purple and green play nicely together.
-            main: '#FF8000',
+            main: '#FFA500',
         },
         secondary: {
             // This is green.A700 as hex.
