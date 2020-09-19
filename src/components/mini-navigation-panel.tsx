@@ -7,7 +7,6 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 
 export const useStyles = makeStyles((theme) => ({
-
     gridWrapper: {
         height: '100vh'
     },
@@ -43,7 +42,7 @@ export const useStyles = makeStyles((theme) => ({
 
 }))
 
-const MiniNavigationPanel = () => {
+const MiniNavigationPanel: React.FC = () => {
     const classes = useStyles()
 
     return <>
@@ -68,7 +67,6 @@ const MiniNavigationPanel = () => {
                     <MailOutlineIcon fontSize="large" color="primary"/>
                 </NavLink>
             </li>
-
         </ul>
     </>
 }

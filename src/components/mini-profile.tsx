@@ -1,7 +1,7 @@
 import React from "react"
 
 import {makeStyles} from "@material-ui/core/styles"
-import {Avatar, Button, Paper} from "@material-ui/core"
+import {Avatar, Paper} from "@material-ui/core"
 import IconButton from "@material-ui/core/IconButton";
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const MiniProfile = () => {
+const MiniProfile:React.FC = () => {
     const classes = useStyles()
     return <>
         <Paper className={classes.rightSideSugItem} variant={"outlined"} square>

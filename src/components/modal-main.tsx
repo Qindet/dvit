@@ -1,10 +1,9 @@
 import React, {ReactElement, ReactNode} from "react";
-import {Button, TextField, FormControl, IconButton, Paper} from "@material-ui/core";
+import {Button, FormControl, IconButton, Paper} from "@material-ui/core";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import {makeStyles} from "@material-ui/core/styles";
-import DvitCreator from "./dvit-creator";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -53,8 +52,6 @@ const ModalMain: React.FC<ModalMain> = ({open,handleOpen,handleClose,children,co
                 {children}
             </IconButton>
         }
-
-
         <Modal
             aria-labelledby="transition-modal-title"
             aria-describedby="transition-modal-description"

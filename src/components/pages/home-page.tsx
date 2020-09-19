@@ -2,7 +2,6 @@ import React from "react"
 import {makeStyles} from "@material-ui/core/styles";
 import {Container, Typography, Grid, Paper, TextField, InputAdornment} from "@material-ui/core";
 import SearchIcon from '@material-ui/icons/Search';
-import {NavLink} from "react-router-dom";
 import NavigationPanel from "../navigation-panel";
 import DvitCreator from "../dvit-creator";
 import Dvit from "../dvit";
@@ -93,7 +92,7 @@ const useStyles = makeStyles((theme) => ({
     }
     }))
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
     const classes = useStyles()
     return <Container maxWidth="lg">
                 <Typography component="div" style={{ backgroundColor: '#fff', height: '100vh' }}>

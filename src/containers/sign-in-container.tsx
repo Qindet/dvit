@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const SignInContainer = () => {
+const SignInContainer:React.FC = () => {
     const classes = useStyles();
 
     return <div className={classes.wrap}>

@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const Dvit = () => {
+const Dvit: React.FC = () => {
     const classes = useStyles()
     return <>
         <div className={classes.dvitItem}>
@@ -92,7 +92,6 @@ const Dvit = () => {
                         <Hidden xsDown>
                             <span>1</span>
                         </Hidden>
-
                     </div>
                     <div>
                         <IconButton color="primary">

@@ -1,5 +1,5 @@
 import React from "react"
-import {createMuiTheme, makeStyles} from "@material-ui/core/styles";
+import { makeStyles} from "@material-ui/core/styles";
 import {Button, FormControl, TextField, Typography} from "@material-ui/core";
 import {NavLink} from "react-router-dom";
 
@@ -35,9 +35,7 @@ const useStyles = makeStyles((theme) => ({
         }
 }))
 const SignUpPage: React.FC = () => {
-    const classes = useStyles();
-
-
+    const classes = useStyles()
     return (
         <div>
             <div style={{backgroundColor: 'orange',height:'100vh'}}>

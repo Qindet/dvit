@@ -1,9 +1,8 @@
 import React from "react"
 
 import {makeStyles} from "@material-ui/core/styles";
-import {Avatar, Button, Paper, TextField} from "@material-ui/core";
+import {Avatar, Button} from "@material-ui/core";
 import TextareaAutosize from "@material-ui/core/TextareaAutosize";
-import CircularProgress from "@material-ui/core/CircularProgress";
 
 const useStyles = makeStyles((theme) => ({
 
@@ -53,14 +52,13 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const DvitCreator = () => {
+const DvitCreator: React.FC = () => {
     const classes = useStyles()
     return <>
                     <Avatar className={classes.avatarItem} alt="Travis Howard" src="/static/images/avatar/2.jpg"/>
                     <div className={classes.mainPanelCreateWrap}>
                         <TextareaAutosize style={{fontSize:18,padding:10,border:'none'}} aria-label="minimum height" rowsMin={3} placeholder="Что происходит" />
                         <Button fullWidth className={classes.infoSideButton}>Двитнуть</Button>
-
                     </div>
         </>
 }

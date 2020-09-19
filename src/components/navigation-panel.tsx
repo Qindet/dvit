@@ -16,7 +16,6 @@ import DvitCreator from "./dvit-creator";
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 
 export const useStyles = makeStyles((theme) => ({
-
     gridWrapper: {
         height: '100vh'
     },
@@ -70,9 +69,8 @@ export const useStyles = makeStyles((theme) => ({
     }
 }))
 
-const NavigationPanel = () => {
+const NavigationPanel:React.FC = () => {
     const classes = useStyles()
-
     return <>
         <ul className={classes.leftSideList}>
             <li className={classes.logoItem}><SpaIcon fontSize="large" color="primary"/></li>
