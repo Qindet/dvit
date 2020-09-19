@@ -4,9 +4,11 @@ import SearchIcon from '@material-ui/icons/Search'
 import ChatIcon from '@material-ui/icons/Chat'
 import LanguageIcon from '@material-ui/icons/Language'
 import {Typography, Button} from "@material-ui/core"
-import ModalSignInContainer from "../../containers/modal-sign-in-container"
+import ModalMainContainer from "../../containers/modal-main-container"
 import { NavLink } from "react-router-dom"
 import SpaIcon from "@material-ui/icons/Spa";
+import DvitCreator from "../dvit-creator";
+import SignInContainer from "../../containers/sign-in-container";
 
 
 const useStyles = makeStyles({
@@ -47,8 +49,8 @@ const useStyles = makeStyles({
         marginRight: '10px'
     },
     infoSideButton: {
-        width: '100%',
         color: 'orange',
+        width: 200,
         '& a': {
             width: '100%',
             padding: '10px'
@@ -111,8 +113,8 @@ const GreetingPage: React.FC = () => {
                     <Button className={classes.infoSideButton} style={{backgroundColor: 'orange',color:'white'}}>
                         <NavLink to="/signup" style={{textDecoration: 'none',color:'#fff'}}>Зарегистрироваться</NavLink>
                     </Button>
-                    <div style={{width:300}}>
-                        <ModalSignInContainer>Войти</ModalSignInContainer>
+                    <div>
+                        <ModalMainContainer content={<SignInContainer/>}>Войти</ModalMainContainer>
                     </div>
                 </div>
             </div>

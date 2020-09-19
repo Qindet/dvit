@@ -10,7 +10,6 @@ const App:React.FC = () => {
             <Route path="/" component={GreetingPageContainer} exact/>
             <Route path="/signup" component={SignUpPage}/>
             <Route path="/home" component={HomePage}/>
-
         </div>
     )
 }

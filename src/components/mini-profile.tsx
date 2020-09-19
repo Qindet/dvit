@@ -2,6 +2,8 @@ import React from "react"
 
 import {makeStyles} from "@material-ui/core/styles"
 import {Avatar, Button, Paper} from "@material-ui/core"
+import IconButton from "@material-ui/core/IconButton";
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
 
 const useStyles = makeStyles((theme) => ({
     avatarItem: {
@@ -35,7 +37,9 @@ const MiniProfile = () => {
                 Esfand <br/>
                 @Esfand
             </div>
-            <Button variant="contained"  color="primary">Читать</Button>
+            <IconButton style={{marginTop:15}}>
+                <PersonAddIcon color="primary"/>
+            </IconButton>
         </Paper>
     </>
 }

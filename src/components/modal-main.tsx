@@ -1,9 +1,10 @@
 import React, {ReactElement, ReactNode} from "react";
-import {Button,  TextField, FormControl} from "@material-ui/core";
+import {Button, TextField, FormControl, IconButton, Paper} from "@material-ui/core";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import {makeStyles} from "@material-ui/core/styles";
+import DvitCreator from "./dvit-creator";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -12,44 +13,47 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    paper: {
-        backgroundColor: theme.palette.background.paper,
-        minWidth: '400px',
+    mainPanelCreate: {
+        minHeight: 120,
         display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        padding: '25px',
-        '& h2': {
-            marginBottom: '10px'
-        }
+        padding: 10,
     },
     infoSideButton: {
         backgroundColor: 'orange',
         color: '#FFF',
         padding: '10px',
         marginTop: '5px',
-    },
-    textField: {
-        width: '100%',
-        marginBottom: '10px'
+        width: 200,
+        margin: '0 auto',
+        display: 'block',
+        '&:hover': {
+            backgroundColor: 'orange',
+        }
     },
     inputLabel: {
         color: 'orange'
     }
 }));
 
-interface ModalSignInProps {
+interface ModalMain {
     open: boolean
     handleOpen: () => void
     handleClose: () => void
     children: string | ReactNode
+    content: ReactElement
 }
 
-const ModalSingIn: React.FC<ModalSignInProps> = ({open,handleOpen,handleClose,children}) => {
+const ModalMain: React.FC<ModalMain> = ({open,handleOpen,handleClose,children,content}) => {
     const classes = useStyles();
 
     return <>
-        <Button fullWidth className={classes.infoSideButton} onClick={handleOpen}>{children}</Button>
+        {typeof children==='string'?
+            <Button fullWidth className={classes.infoSideButton} onClick={handleOpen}>{children}</Button>:
+            <IconButton onClick={handleOpen} color="primary">
+                {children}
+            </IconButton>
+        }
+
 
         <Modal
             aria-labelledby="transition-modal-title"
@@ -64,15 +68,10 @@ const ModalSingIn: React.FC<ModalSignInProps> = ({open,handleOpen,handleClose,ch
             }}
         >
             <Fade in={open}>
-                <FormControl className={classes.paper}>
-                    <h2 id="transition-modal-title">Войдите в учетную запись</h2>
-                    <div>
-                        <TextField className={classes.textField}  id="email-field" label="Email" variant="filled" />
-                    </div>
-                    <div>
-                        <TextField className={classes.textField}  id="pass-field" label="Пароль" variant="filled" />
-                    </div>
-                    <Button color="secondary" className={classes.infoSideButton} onClick={handleOpen}>Войти</Button>
+                <FormControl>
+                    <Paper className={classes.mainPanelCreate} variant={"outlined"}>
+                        {content}
+                    </Paper>
                 </FormControl>
             </Fade>
         </Modal>
@@ -80,4 +79,4 @@ const ModalSingIn: React.FC<ModalSignInProps> = ({open,handleOpen,handleClose,ch
 }
 
 
-export default ModalSingIn
+export default ModalMain

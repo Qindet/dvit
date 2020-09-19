@@ -6,6 +6,7 @@ import ChatBubbleIcon from "@material-ui/icons/ChatBubble";
 import RepeatIcon from "@material-ui/icons/Repeat";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import ReplyIcon from "@material-ui/icons/Reply";
+import Hidden from "@material-ui/core/Hidden";
 
 const useStyles = makeStyles((theme) => ({
     avatarItem: {
@@ -71,19 +72,27 @@ const Dvit = () => {
                         <IconButton color="primary">
                             <ChatBubbleIcon/>
                         </IconButton>
-                        <span>1</span>
+                        <Hidden xsDown>
+                            <span>1</span>
+                        </Hidden>
                     </div>
                     <div>
                         <IconButton color="primary">
                             <RepeatIcon/>
                         </IconButton>
-                        <span>1</span>
+                        <Hidden xsDown>
+                            <span>1</span>
+                        </Hidden>
+
                     </div>
                     <div>
                         <IconButton color="primary">
                             <FavoriteBorderIcon/>
                         </IconButton>
-                        <span>1</span>
+                        <Hidden xsDown>
+                            <span>1</span>
+                        </Hidden>
+
                     </div>
                     <div>
                         <IconButton color="primary">

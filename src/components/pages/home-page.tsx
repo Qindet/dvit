@@ -1,23 +1,17 @@
 import React from "react"
 import {makeStyles} from "@material-ui/core/styles";
-import {Container, Typography, Grid, Paper, Avatar, TextField, Button, InputAdornment} from "@material-ui/core";
-import SpaIcon from '@material-ui/icons/Spa'
+import {Container, Typography, Grid, Paper, TextField, InputAdornment} from "@material-ui/core";
 import SearchIcon from '@material-ui/icons/Search';
-import HomeIcon from '@material-ui/icons/Home';
-import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
-import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
-import SubjectIcon from '@material-ui/icons/Subject';
-import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import {NavLink} from "react-router-dom";
-import { IconButton } from '@material-ui/core';
-import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
-import RepeatIcon from '@material-ui/icons/Repeat';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import ReplyIcon from '@material-ui/icons/Reply';
 import NavigationPanel from "../navigation-panel";
 import DvitCreator from "../dvit-creator";
 import Dvit from "../dvit";
 import MiniProfile from "../mini-profile";
+import Hidden from "@material-ui/core/Hidden";
+import MiniNavigationPanel from "../mini-navigation-panel";
+import CreateIcon from '@material-ui/icons/Create';
+import ModalMainContainer from "../../containers/modal-main-container";
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -28,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
     leftSidePanel: {
         marginTop: '15px',
+        minWidth: 50,
         '@media (max-width: 1140px)': {
             flexBasis: '5%'
         },
@@ -37,7 +32,6 @@ const useStyles = makeStyles((theme) => ({
     },
     mainPanelTop: {
         height: 50,
-
     },
     dvits: {
         marginTop: 20
@@ -45,6 +39,11 @@ const useStyles = makeStyles((theme) => ({
     avatarItem: {
         width: 50,
         height: 50
+    },
+    mainPanelCreate: {
+        minHeight: 120,
+        display: 'flex',
+        padding: 10
     },
     ///////
     rightSidePanel: {
@@ -85,21 +84,36 @@ const useStyles = makeStyles((theme) => ({
             padding: 10
         }
     },
+    modalMain: {
+        position: 'fixed',
+        right: 10,
+        bottom: 70,
+        backgroundColor: 'orange',
+        borderRadius: '45%'
+    }
     }))
 
 const HomePage = () => {
     const classes = useStyles()
     return <Container maxWidth="lg">
                 <Typography component="div" style={{ backgroundColor: '#fff', height: '100vh' }}>
-                    <Grid className={classes.gridWrapper} container spacing={6}>
-                        <Grid className={classes.leftSidePanel} item xs={2}>
-                          <NavigationPanel/>
-                        </Grid>
+                    <Grid className={classes.gridWrapper} container spacing={3}>
+                        <Hidden xsDown>
+                            <Grid className={classes.leftSidePanel} item xs={2}>
+                                <NavigationPanel/>
+                            </Grid>
+                        </Hidden>
+
                         <Grid className={classes.mainPanel} item xs>
                             <Paper square={true} className={classes.mainPanelTop} variant={"outlined"}>
                                 <Typography style={{fontSize:'19px',fontWeight:600,padding:'10px 0 0 10px'}}>Главная</Typography>
                             </Paper>
-                            <DvitCreator/>
+                            <Hidden xsDown>
+                                <Paper className={classes.mainPanelCreate} variant={"outlined"}>
+                                    <DvitCreator/>
+                                </Paper>
+                            </Hidden>
+
                             <Paper className={classes.dvits} variant={"outlined"}>
                                 <Dvit/>
                                 <Dvit/>
@@ -138,7 +152,17 @@ const HomePage = () => {
                                 </Paper>
                             </div>
                         </Grid>
+                        <Hidden smUp>
+                            <MiniNavigationPanel/>
+                        </Hidden>
+                        <Hidden smUp>
+                            <div className={classes.modalMain}>
+                                <ModalMainContainer content={<DvitCreator/>}>
+                                    <CreateIcon style={{fontSize:54}}  color="secondary"/>
+                                </ModalMainContainer>
+                            </div>
 
+                        </Hidden>
                     </Grid>
                 </Typography>
             </Container>

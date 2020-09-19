@@ -2,7 +2,7 @@ import React from "react"
 import SpaIcon from "@material-ui/icons/Spa";
 import {NavLink} from "react-router-dom";
 import HomeIcon from "@material-ui/icons/Home";
-import {Button, Typography} from "@material-ui/core";
+import { Typography} from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import NotificationsNoneIcon from "@material-ui/icons/NotificationsNone";
 import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
@@ -11,8 +11,11 @@ import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 import {makeStyles} from "@material-ui/core/styles";
 import CreateIcon from '@material-ui/icons/Create';
 import Hidden from "@material-ui/core/Hidden";
-import ModalSignInContainer from "../containers/modal-sign-in-container";
-const useStyles = makeStyles((theme) => ({
+import ModalMainContainer from "../containers/modal-main-container";
+import DvitCreator from "./dvit-creator";
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
+
+export const useStyles = makeStyles((theme) => ({
 
     gridWrapper: {
         height: '100vh'
@@ -87,13 +90,13 @@ const NavigationPanel = () => {
             </li>
             <li className={classes.leftSideListItem}>
                 <NavLink to="/">
-                    <HomeIcon className={classes.iconItem} fontSize="large" color="primary"/>
+                    <NotificationsNoneIcon className={classes.iconItem} fontSize="large" color="primary"/>
                     <Typography className={classes.textItem}>Уведомления</Typography>
                 </NavLink>
             </li>
             <li className={classes.leftSideListItem}>
                 <NavLink to="/">
-                    <NotificationsNoneIcon className={classes.iconItem} fontSize="large" color="primary"/>
+                    <MailOutlineIcon className={classes.iconItem} fontSize="large" color="primary"/>
                     <Typography className={classes.textItem}>Сообщения</Typography>
                 </NavLink>
             </li>
@@ -116,20 +119,16 @@ const NavigationPanel = () => {
                 </NavLink>
             </li>
             <li className={classes.leftSideListItem}>
-                    {/*<CreateIcon className={classes.iconItem} fontSize="large" color="primary"/>*/}
                     <Hidden mdDown>
-                        <ModalSignInContainer>Двитнуть</ModalSignInContainer>
+                        <ModalMainContainer content={<DvitCreator/>}>Двитнуть</ModalMainContainer>
                     </Hidden>
                     <Hidden lgUp>
-                        <div style={{marginLeft:-15}}>
-                            <ModalSignInContainer>
+                        <div style={{marginLeft: -10}}>
+                            <ModalMainContainer content={<DvitCreator/>}>
                                 <CreateIcon className={classes.iconItem} fontSize="large" color="primary"/>
-                            </ModalSignInContainer>
+                            </ModalMainContainer>
                         </div>
-
-
                     </Hidden>
-                    {/*<Typography className={classes.textItem}>Двитнуть</Typography>*/}
             </li>
         </ul>
         </>
