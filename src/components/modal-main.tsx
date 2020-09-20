@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-interface ModalMain {
+interface ModalMainProps {
     open: boolean
     handleOpen: () => void
     handleClose: () => void
@@ -42,7 +42,7 @@ interface ModalMain {
     content: ReactElement
 }
 
-const ModalMain: React.FC<ModalMain> = ({open,handleOpen,handleClose,children,content}) => {
+const ModalMain: React.FC<ModalMainProps> = ({open,handleOpen,handleClose,children,content}) => {
     const classes = useStyles();
 
     return <>

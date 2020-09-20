@@ -1,9 +1,7 @@
-export enum LoadingState {
-    SUCCESS = 'SUCCESS',
-    FAILED = 'FAILED',
-    NEVER = 'NEVER'
-}
+import {LoadingStatus} from "./general";
+
 export interface IDvit {
+    _id: string
     text: string
     user: {
         fullName: string
@@ -13,6 +11,6 @@ export interface IDvit {
 }
 
 export interface IDvitsState {
-    items: Array<IDvit>,
-    loadingStatus: LoadingState
+    dvits: Array<IDvit>,
+    loadingStatus: LoadingStatus
 }

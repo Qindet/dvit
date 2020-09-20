@@ -1,15 +1,20 @@
 import React from "react"
-import {makeStyles} from "@material-ui/core/styles";
-import {Container, Typography, Grid, Paper, TextField, InputAdornment} from "@material-ui/core";
-import SearchIcon from '@material-ui/icons/Search';
-import NavigationPanel from "../navigation-panel";
-import DvitCreator from "../dvit-creator";
-import Dvit from "../dvit";
-import MiniProfile from "../mini-profile";
-import Hidden from "@material-ui/core/Hidden";
-import MiniNavigationPanel from "../mini-navigation-panel";
-import CreateIcon from '@material-ui/icons/Create';
-import ModalMainContainer from "../../containers/modal-main-container";
+import {makeStyles} from "@material-ui/core/styles"
+import {Container, Typography, Grid, Paper, TextField, InputAdornment} from "@material-ui/core"
+import SearchIcon from '@material-ui/icons/Search'
+import NavigationPanel from "../navigation-panel"
+import DvitCreator from "../dvit-creator"
+import MiniProfile from "../mini-profile"
+import Hidden from "@material-ui/core/Hidden"
+import MiniNavigationPanel from "../mini-navigation-panel"
+import CreateIcon from '@material-ui/icons/Create'
+import ModalMainContainer from "../../containers/modal-main-container"
+import Trends from "../trends";
+import { Route } from "react-router-dom";
+import Dvits from "../dvits";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import IconButton from "@material-ui/core/IconButton";
+import ArrowButtonBack from "../../UI/arrow-button-back";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -94,6 +99,8 @@ const useStyles = makeStyles((theme) => ({
 
 const HomePage: React.FC = () => {
     const classes = useStyles()
+
+
     return <Container maxWidth="lg">
                 <Typography component="div" style={{ backgroundColor: '#fff', height: '100vh' }}>
                     <Grid className={classes.gridWrapper} container spacing={3}>
@@ -104,20 +111,31 @@ const HomePage: React.FC = () => {
                         </Hidden>
 
                         <Grid className={classes.mainPanel} item xs>
-                            <Paper square={true} className={classes.mainPanelTop} variant={"outlined"}>
-                                <Typography style={{fontSize:'19px',fontWeight:600,padding:'10px 0 0 10px'}}>Главная</Typography>
-                            </Paper>
-                            <Hidden xsDown>
-                                <Paper className={classes.mainPanelCreate} variant={"outlined"}>
-                                    <DvitCreator/>
+                            <Route path={'/home/dvit'} >
+                                <Paper style={{paddingBottom:10}} square={true} className={classes.mainPanelTop} variant={"outlined"}>
+                                    <Typography style={{fontSize:'19px',fontWeight:600,padding:'10px 0 10px 10px'}}>
+                                        <ArrowButtonBack/>
+                                        Двитнуть
+                                    </Typography>
                                 </Paper>
-                            </Hidden>
+                            </Route>
 
-                            <Paper className={classes.dvits} variant={"outlined"}>
-                                <Dvit/>
-                                <Dvit/>
-                                <Dvit/>
-                            </Paper>
+                            <Route path={['/home', '/home/search']} exact>
+                                <Paper square={true} className={classes.mainPanelTop} variant={"outlined"}>
+                                    <Typography style={{fontSize:'19px',fontWeight:600,padding:'10px 0 0 10px'}}>Главная</Typography>
+                                </Paper>
+                                <Hidden xsDown>
+                                    <Paper className={classes.mainPanelCreate} variant={"outlined"}>
+                                        <DvitCreator/>
+                                    </Paper>
+                                </Hidden>
+                            </Route>
+
+
+                            <Route path="/home" exact>
+                                <Dvits />
+                            </Route>
+
                         </Grid>
                         <Grid className={classes.rightSidePanel} item xs={3}>
                             <div className={classes.rightSideWrap}>
@@ -132,16 +150,7 @@ const HomePage: React.FC = () => {
                                     }}
                                 />
                                 <Paper className={classes.rightSideNew} variant={"outlined"}>
-                                    <Typography variant={'h5'}>Что нового?</Typography>
-                                    <Paper className={classes.rightSideNewItem} variant={"outlined"} square>
-                                        James
-                                    </Paper>
-                                    <Paper className={classes.rightSideNewItem} variant={"outlined"} square>
-                                        James
-                                    </Paper>
-                                    <Paper className={classes.rightSideNewItem} variant={"outlined"} square>
-                                        James
-                                    </Paper>
+                                    <Trends/>
                                 </Paper>
                                 <Paper className={classes.rightSideSuggestions}>
                                     <Typography variant={'h5'}>Кого читать</Typography>

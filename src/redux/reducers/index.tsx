@@ -1,4 +1,8 @@
 import {combineReducers} from 'redux'
-import dvitReducer from './dvits/reducer'
+import dvitsReducer from './dvits'
+import trendsReducer from "./trends";
 
-export const rootReducer = combineReducers({dvitReducer})
+type RootReducerType = typeof rootReducer
+export type AppStateType = ReturnType<RootReducerType>
+
+export const rootReducer = combineReducers({dvitsReducer,trendsReducer})

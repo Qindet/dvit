@@ -75,7 +75,7 @@ const NavigationPanel:React.FC = () => {
         <ul className={classes.leftSideList}>
             <li className={classes.logoItem}><SpaIcon fontSize="large" color="primary"/></li>
             <li className={classes.leftSideListItem}>
-                <NavLink to="/">
+                <NavLink to="/home">
                     <HomeIcon className={classes.iconItem}  fontSize="large" color="primary"/>
                     <Typography className={classes.textItem}>Главная</Typography>
                 </NavLink>

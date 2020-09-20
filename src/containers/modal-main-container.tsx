@@ -1,13 +1,13 @@
 import React, {ReactElement, ReactNode} from 'react'
 import ModalMain from '../components/modal-main';
 
-interface ModalMainContainer {
+interface ModalMainContainerProps {
     children: string | ReactNode
     content: ReactElement
 }
 
 
-const ModalMainContainer: React.FC<ModalMainContainer> = ({children,
+const ModalMainContainer: React.FC<ModalMainContainerProps> = ({children,
                                                               content}) => {
     const [open, setOpen] = React.useState(false)
     const handleOpen = () => {
