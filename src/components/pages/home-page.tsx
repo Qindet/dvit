@@ -15,6 +15,7 @@ import Dvits from "../dvits";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import IconButton from "@material-ui/core/IconButton";
 import ArrowButtonBack from "../../UI/arrow-button-back";
+import FullDvit from "../full-dvit";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -101,6 +102,8 @@ const HomePage: React.FC = () => {
     const classes = useStyles()
 
 
+    // @ts-ignore
+    // @ts-ignore
     return <Container maxWidth="lg">
                 <Typography component="div" style={{ backgroundColor: '#fff', height: '100vh' }}>
                     <Grid className={classes.gridWrapper} container spacing={3}>
@@ -119,7 +122,7 @@ const HomePage: React.FC = () => {
                                     </Typography>
                                 </Paper>
                             </Route>
-
+                            <Route path="/home/dvit/:id" components={FullDvit} />
                             <Route path={['/home', '/home/search']} exact>
                                 <Paper square={true} className={classes.mainPanelTop} variant={"outlined"}>
                                     <Typography style={{fontSize:'19px',fontWeight:600,padding:'10px 0 0 10px'}}>Главная</Typography>

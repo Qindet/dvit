@@ -60,7 +60,8 @@ const DvitsItem: React.FC<IDvit> = ({_id,text,user}) => {
     const classes = useStyles()
     const {push}=useHistory()
     const clickDvitHandler = () => {
-        push(`/home/dvit/${_id}`)
+        const id = _id
+        push(`/home/dvit/${id}`)
     }
     return <>
             <div className={classes.dvitItem} onClick={clickDvitHandler}>
