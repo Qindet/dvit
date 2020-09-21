@@ -12,5 +12,6 @@ export interface IDvit {
 
 export interface IDvitsState {
     dvits: Array<IDvit>,
-    loadingStatus: LoadingStatus
+    loadingStatus: LoadingStatus,
+    loadingAddDvitStatus: LoadingStatus
 }
