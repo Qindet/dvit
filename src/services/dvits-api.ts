@@ -11,8 +11,7 @@ export class DvitsApi {
         const res = await axios.get(`/dvits?_id=${id}`)
         return res.data[0]
     }
-    addDvit = async (dvit: IDvit): Promise<IDvit> => {
-        console.log(dvit)
+    addDvit = async (dvit:IDvit): Promise<IDvit> => {
         const res = await axios.post('/dvits',dvit)
         return res.data
     }

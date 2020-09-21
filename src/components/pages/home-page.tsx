@@ -45,11 +45,7 @@ const useStyles = makeStyles((theme) => ({
         width: 50,
         height: 50
     },
-    mainPanelCreate: {
-        minHeight: 120,
-        display: 'flex',
-        padding: 10
-    },
+
     ///////
     rightSidePanel: {
         marginTop: 10,
@@ -99,8 +95,6 @@ const HomePage: React.FC = () => {
     const classes = useStyles()
 
 
-    // @ts-ignore
-    // @ts-ignore
     return <Container maxWidth="lg">
                 <Typography component="div" style={{ backgroundColor: '#fff', height: '100vh' }}>
                     <Grid className={classes.gridWrapper} container spacing={3}>
@@ -125,9 +119,7 @@ const HomePage: React.FC = () => {
                                     <Typography style={{fontSize:'19px',fontWeight:600,padding:'10px 0 0 10px'}}>Главная</Typography>
                                 </Paper>
                                 <Hidden xsDown>
-                                    <Paper className={classes.mainPanelCreate} variant={"outlined"}>
                                         <DvitCreator/>
-                                    </Paper>
                                 </Hidden>
                             </Route>
                             <Route path="/home" exact>

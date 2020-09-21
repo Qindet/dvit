@@ -3,7 +3,7 @@ import {
     addDvitLoaded,
     DvitsActionsType,
     fetchDvitsLoaded,
-    IAddDvitRequestedAction,
+    IAddDvitRequestedAction, setAddDvitLoadingStatus,
     setDvitsLoadingStatus
 } from "../actions/dvits"
 import {DvitsApi} from "../../services/dvits-api"
@@ -35,7 +35,7 @@ export function* addDvitRequest({text}:IAddDvitRequestedAction) {
         const data = yield call(dvitsService.addDvit,dvit)
         yield put(addDvitLoaded(data))
     } catch (e) {
-        yield put(setDvitLoadingStatus(LoadingStatus.FAILED))
+        yield put(setAddDvitLoadingStatus(LoadingStatus.FAILED))
     }
 }
 

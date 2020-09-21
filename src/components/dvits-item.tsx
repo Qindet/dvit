@@ -29,7 +29,9 @@ const useStyles = makeStyles((theme) => ({
     dvitWrap: {
         display: 'flex',
         flexDirection: 'column',
-        margin: 5
+        margin: 5,
+        width: '100%',
+        paddingLeft: 10
     },
     dvitWrapTop: {
         display: 'flex',
