@@ -54,9 +54,6 @@ const useStyles = makeStyles((theme) => ({
     rightSidePanel: {
         marginTop: 10,
         marginRight: 20,
-        '@media (max-width: 1100px)': {
-            display: 'none'
-        }
     },
     rightSideWrap: {
         position: 'fixed',
@@ -122,7 +119,7 @@ const HomePage: React.FC = () => {
                                     </Typography>
                                 </Paper>
                             </Route>
-                            <Route path="/home/dvit/:id" components={FullDvit} />
+
                             <Route path={['/home', '/home/search']} exact>
                                 <Paper square={true} className={classes.mainPanelTop} variant={"outlined"}>
                                     <Typography style={{fontSize:'19px',fontWeight:600,padding:'10px 0 0 10px'}}>Главная</Typography>
@@ -133,36 +130,40 @@ const HomePage: React.FC = () => {
                                     </Paper>
                                 </Hidden>
                             </Route>
-
-
                             <Route path="/home" exact>
                                 <Dvits />
                             </Route>
+                            <Route path="/home/dvit/:id" component={FullDvit} exact/>
+
+
 
                         </Grid>
-                        <Grid className={classes.rightSidePanel} item xs={3}>
-                            <div className={classes.rightSideWrap}>
-                                <TextField
-                                    variant="filled"
-                                    id="standard-start-adornment"
-                                    size="medium"
-                                    className={classes.rightSideSearch}
-                                    placeholder="Поиск в Dvitter"
-                                    InputProps={{
-                                        startAdornment: <InputAdornment position="start"><SearchIcon/></InputAdornment>,
-                                    }}
-                                />
-                                <Paper className={classes.rightSideNew} variant={"outlined"}>
-                                    <Trends/>
-                                </Paper>
-                                <Paper className={classes.rightSideSuggestions}>
-                                    <Typography variant={'h5'}>Кого читать</Typography>
-                                    <MiniProfile/>
-                                    <MiniProfile/>
-                                    <MiniProfile/>
-                                </Paper>
-                            </div>
-                        </Grid>
+                        <Hidden smDown>
+                            <Grid className={classes.rightSidePanel} item xs={3}>
+                                <div className={classes.rightSideWrap}>
+                                    <TextField
+                                        variant="filled"
+                                        id="standard-start-adornment"
+                                        size="medium"
+                                        className={classes.rightSideSearch}
+                                        placeholder="Поиск в Dvitter"
+                                        InputProps={{
+                                            startAdornment: <InputAdornment position="start"><SearchIcon/></InputAdornment>,
+                                        }}
+                                    />
+                                    <Paper className={classes.rightSideNew} variant={"outlined"}>
+                                        <Trends/>
+                                    </Paper>
+                                    <Paper className={classes.rightSideSuggestions}>
+                                        <Typography variant={'h5'}>Кого читать</Typography>
+                                        <MiniProfile/>
+                                        <MiniProfile/>
+                                        <MiniProfile/>
+                                    </Paper>
+                                </div>
+                            </Grid>
+                        </Hidden>
+
                         <Hidden smUp>
                             <MiniNavigationPanel/>
                         </Hidden>

@@ -5,9 +5,9 @@ import IconButton from "@material-ui/core/IconButton";
 
 
 const ArrowButtonBack = () => {
-    const {goBack} = useHistory()
+    const {push} = useHistory()
     const clickHandler = () => {
-        goBack()
+        push('/home')
     }
 
     return <>

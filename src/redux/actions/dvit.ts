@@ -10,7 +10,7 @@ export enum DvitActionsType {
 
 export interface IFetchDvitLoadedAction extends Action<DvitActionsType>{
     type: DvitActionsType.FETCH_DVIT_LOADED,
-    dvit: IDvit
+    dvit: IDvit | null
 }
 export interface IFetchDvitRequestedAction extends Action<DvitActionsType>{
     type: DvitActionsType.FETCH_DVIT_REQUESTED,
@@ -21,7 +21,7 @@ export interface ISetDvitLoadingStatusAction extends Action<DvitActionsType>{
     loadingStatus: LoadingStatus
 }
 
-export const fetchDvitLoaded = (dvit: IDvit): IFetchDvitLoadedAction => ({
+export const fetchDvitLoaded = (dvit: IDvit | null): IFetchDvitLoadedAction => ({
     type: DvitActionsType.FETCH_DVIT_LOADED,
     dvit
 })

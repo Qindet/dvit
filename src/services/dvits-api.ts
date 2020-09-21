@@ -8,7 +8,7 @@ export class DvitsApi {
         return res.data
     }
     fetchDvit = async (id: string): Promise<IDvit> => {
-        const res = await axios.get(`/dvits/${id}`)
-        return res.data
+        const res = await axios.get(`/dvits?_id=${id}`)
+        return res.data[0]
     }
 }

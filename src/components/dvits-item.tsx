@@ -60,15 +60,14 @@ const DvitsItem: React.FC<IDvit> = ({_id,text,user}) => {
     const classes = useStyles()
     const {push}=useHistory()
     const clickDvitHandler = () => {
-        const id = _id
-        push(`/home/dvit/${id}`)
+        push(`/home/dvit/${_id}`)
     }
     return <>
             <div className={classes.dvitItem} onClick={clickDvitHandler}>
                 <Avatar className={classes.avatarItem} alt="Travis Howard" src="/static/images/avatar/2.jpg"/>
                 <div className={classes.dvitWrap}>
                     <div className={classes.dvitWrapTop}>
-                        <span>{user.userName}</span><span>@pokelawls</span><span>&middot;</span><span>5 ч</span>
+                       <span>@pokelawls</span><span>&middot;</span><span>5 ч</span>
                     </div>
                     <Typography>
                         {text}
