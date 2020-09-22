@@ -4,7 +4,7 @@ import {IDvit} from "../redux/interfaces/dvits-state";
 
 export class DvitsApi {
     fetchDvits = async (): Promise<Array<IDvit>> => {
-        const res = await axios.get('/dvits')
+        const res = await axios.get('/dvits?_sort=_id&_order=desc')
         return res.data
     }
     fetchDvit = async (id: string): Promise<IDvit> => {

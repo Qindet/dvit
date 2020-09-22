@@ -97,14 +97,14 @@ const HomePage: React.FC = () => {
 
     return <Container maxWidth="lg">
                 <Typography component="div" style={{ backgroundColor: '#fff', height: '100vh' }}>
-                    <Grid className={classes.gridWrapper} container spacing={3}>
+                    <Grid className={classes.gridWrapper} container spacing={4}>
                         <Hidden xsDown>
                             <Grid className={classes.leftSidePanel} item xs={2}>
                                 <NavigationPanel/>
                             </Grid>
                         </Hidden>
 
-                        <Grid className={classes.mainPanel} item xs>
+                        <Grid className={classes.mainPanel} item lg={7} sm={10} md={7} xs={12}>
                             <Route path={'/home/dvit'} >
                                 <Paper style={{paddingBottom:10}} square={true} className={classes.mainPanelTop} variant={"outlined"}>
                                     <Typography style={{fontSize:'19px',fontWeight:600,padding:'10px 0 10px 10px'}}>
@@ -131,7 +131,7 @@ const HomePage: React.FC = () => {
 
                         </Grid>
                         <Hidden smDown>
-                            <Grid className={classes.rightSidePanel} item xs={3}>
+                            <Grid className={classes.rightSidePanel} item lg={2}>
                                 <div className={classes.rightSideWrap}>
                                     <TextField
                                         variant="filled"

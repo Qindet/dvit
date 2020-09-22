@@ -36,7 +36,7 @@ export default function dvitsReducer(state=initialState,action:DvitsActions) {
         case DvitsActionsType.ADD_DVIT_LOADED:
             return {
                 ...state,
-                dvits: [...state.dvits,action.dvit],
+                dvits: [action.dvit,...state.dvits],
                 loadingAddDvitStatus: LoadingStatus.LOADED
             }
         case DvitsActionsType.SET_LOADING_ADD_DVIT_STATUS:

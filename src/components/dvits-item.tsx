@@ -19,6 +19,8 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         padding: 10,
         borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
+        borderRight: '1px solid rgba(0, 0, 0, 0.12)',
+        borderLeft: '1px solid rgba(0, 0, 0, 0.12)',
         overflow: 'auto',
         '&:hover': {
             backgroundColor: '#FFDAB9',
@@ -71,9 +73,12 @@ const DvitsItem: React.FC<IDvit> = ({_id,text,user}) => {
                     <div className={classes.dvitWrapTop}>
                        <span>@pokelawls</span><span>&middot;</span><span>5 ч</span>
                     </div>
-                    <Typography>
-                        {text}
-                    </Typography>
+                    <div>
+                        <Typography variant={"body1"} style={{wordBreak: 'break-all'}}>
+                            {text}
+                        </Typography>
+                    </div>
+
                     <div className={classes.dvitWrapBot}>
                         <div>
                             <IconButton color="primary" onClick={(e) => {e.stopPropagation();alert('clicked')}}>

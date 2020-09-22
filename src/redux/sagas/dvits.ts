@@ -9,7 +9,6 @@ import {
 import {DvitsApi} from "../../services/dvits-api"
 import { LoadingStatus } from '../interfaces/general'
 import {IDvit} from "../interfaces/dvits-state";
-import {setDvitLoadingStatus} from "../actions/dvit";
 
 const dvitsService = new DvitsApi()
 
@@ -24,7 +23,7 @@ export function* fetchDvitsRequest() {
 export function* addDvitRequest({text}:IAddDvitRequestedAction) {
     try {
         const dvit: IDvit = {
-            _id: Math.random().toString(10).substr(4),
+            _id: Date.now().toString(),
             text,
             user: {
                 userName: 'Dima',

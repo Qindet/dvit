@@ -72,7 +72,7 @@ const DvitCreator: React.FC = () => {
     const isAddDvitLoading = useSelector(selectIsAddDvitLoadingStatus)
     const [text,setText] = useState('')
     const changeTextArea = (e:React.FormEvent<HTMLTextAreaElement>) => {
-        if (e.currentTarget) {
+        if (e.currentTarget && text.length <= 250) {
             setText(e.currentTarget.value)
         }
     }

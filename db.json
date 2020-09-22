@@ -1,154 +1,44 @@
 {
   "dvits": [
     {
-      "_id": "34754679217136",
-      "text": "ascdsvc",
+      "_id": "1600761246023",
+      "text": "my2",
       "user": {
         "userName": "Dima",
         "fullName": "Zholobov",
         "avatarUrl": "https://source.unsplash.com/random/100x100?5"
       },
-      "id": "2KCv2Ar"
+      "id": "XLRU-ws"
     },
     {
-      "_id": "00475232178687",
-      "text": "cdscsdcsdcds",
+      "_id": "1600761255176",
+      "text": "my3",
       "user": {
         "userName": "Dima",
         "fullName": "Zholobov",
         "avatarUrl": "https://source.unsplash.com/random/100x100?5"
       },
-      "id": "PwEKkdr"
+      "id": "3xFpGJb"
     },
     {
-      "_id": "2888098797019465",
-      "text": "cdscdsdcs",
+      "_id": "1600761258359",
+      "text": "my5",
       "user": {
         "userName": "Dima",
         "fullName": "Zholobov",
         "avatarUrl": "https://source.unsplash.com/random/100x100?5"
       },
-      "id": "4jodCSR"
+      "id": "FzcFDJs"
     },
     {
-      "_id": "018524683674348",
-      "text": "bfgbgbff",
+      "_id": "1600761288839",
+      "text": "my6",
       "user": {
         "userName": "Dima",
         "fullName": "Zholobov",
         "avatarUrl": "https://source.unsplash.com/random/100x100?5"
       },
-      "id": "gHVpFMy"
-    },
-    {
-      "_id": "26614004449495",
-      "text": "gfsgdgdfgdsfdfd",
-      "user": {
-        "userName": "Dima",
-        "fullName": "Zholobov",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
-      },
-      "id": "uPrNXyx"
-    },
-    {
-      "_id": "50023329840026",
-      "text": "vcxvcxv",
-      "user": {
-        "userName": "Dima",
-        "fullName": "Zholobov",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
-      },
-      "id": "uFg88Kh"
-    },
-    {
-      "_id": "782889041926823",
-      "text": "vcxvcxvvcx",
-      "user": {
-        "userName": "Dima",
-        "fullName": "Zholobov",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
-      },
-      "id": "jP5mivH"
-    },
-    {
-      "_id": "98397332295986",
-      "text": "gfdgdfgfdcvc",
-      "user": {
-        "userName": "Dima",
-        "fullName": "Zholobov",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
-      },
-      "id": "YrtCZs2"
-    },
-    {
-      "_id": "34463863132917",
-      "text": "fdsfsdf",
-      "user": {
-        "userName": "Dima",
-        "fullName": "Zholobov",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
-      },
-      "id": "4pHnyPt"
-    },
-    {
-      "_id": "09684219712834",
-      "text": "nvbnbvn",
-      "user": {
-        "userName": "Dima",
-        "fullName": "Zholobov",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
-      },
-      "id": "OGdiqeS"
-    },
-    {
-      "_id": "747948730132996",
-      "text": "имсиаиаим",
-      "user": {
-        "userName": "Dima",
-        "fullName": "Zholobov",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
-      },
-      "id": "Bx3EBZ9"
-    },
-    {
-      "_id": "00381940117381",
-      "text": "fdsfsdfsdf",
-      "user": {
-        "userName": "Dima",
-        "fullName": "Zholobov",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
-      },
-      "id": "G9NFus2"
-    },
-    {
-      "_id": "908528414502016",
-      "text": "",
-      "user": {
-        "userName": "Dima",
-        "fullName": "Zholobov",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
-      },
-      "id": "5Wx5qMu"
-    },
-    {
-      "_id": "772444117886465",
-      "text": "bgfbgfb",
-      "user": {
-        "userName": "Dima",
-        "fullName": "Zholobov",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
-      },
-      "id": "gYC97FW"
-    },
-    {
-      "_id": "20972089489245",
-      "text": "grgt",
-      "user": {
-        "userName": "Dima",
-        "fullName": "Zholobov",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
-      },
-      "id": "onbVMof"
+      "id": "5mjVC-7"
     }
   ],
   "user": {
